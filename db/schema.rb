@@ -10,7 +10,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110213151014) do
+ActiveRecord::Schema.define(:version => 20110215155923) do
+
+  create_table "urls", :force => true do |t|
+    t.string   "full"
+    t.string   "short"
+    t.integer  "user_id"
+    t.string   "title"
+    t.integer  "count"
+    t.date     "last"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "urls", ["short"], :name => "index_urls_on_short", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false

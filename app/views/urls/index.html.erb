@@ -1,0 +1,11 @@
+<h2 class="page-title"><%= @title %></h2>
+<%= render 'layouts/url_nav' %>
+<div id="url_list">
+<% @url_list.each do |u| %>
+	<div id="url_entry" class="url_entry">
+		<a href="http://go.va.gov/<%= u.short %>" alt="<%= u.full %>"><%= u.title %></a>
+		<div id="url_desc">http://go.va.gov/<%= u.short %></div>
+		<div id="url_count">Count: <%= u.count %></div>
+		<div id="url_last">Last Opened: <%= u.last %></div>
+	</div>
+<% end %>

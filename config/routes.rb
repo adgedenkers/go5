@@ -1,4 +1,6 @@
 RailStation::Application.routes.draw do
+  resources :urls
+
   get "posts/new"
 
   devise_for :users

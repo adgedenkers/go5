@@ -1,0 +1,15 @@
+<h2 class="page-title">Shorten a URL</h2>
+
+<% form_for :urls, :url => { :action => :create } do |form| %>
+	<p class="name">
+		<label for="url_full">Full Url</label><br/>
+		<%= form.text_field 'full', :width => "75px" %>
+	</p>
+	<p class="name"> 
+		<label for="url_short">Short String</label><br/> 
+		<%= form.text_field 'short', :width => "20px" %>
+	</p>
+	<p class="submit">
+		<%= submit_tag %> 
+	</p>
+<% end %>
