@@ -1,7 +1,14 @@
-DemoApp::Application.routes.draw do
-  resources :microposts
+RailStation::Application.routes.draw do
+  get "posts/new"
 
-  resources :users
+  devise_for :users
+
+  match "home"    => "pages/home"
+  match "about"   => "pages#about"
+  match "contact" => "pages#contact"
+  match "help"    => "pages#help"
+  
+  root :to => "pages#home"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
